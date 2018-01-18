@@ -1,0 +1,52 @@
+<modal-dialog show='tparCtrl.modalShown' control='tparCtrl.modalCtrl' width='700px' height='650px' bcolor='rgba(34, 34, 34, 0.9)' type='tour_params'
+ng-init='tparCtrl.country = navctrl.choosenCountry; tparCtrl.findCities(navctrl.choosenCID)'>
+	<h1 class='beaty' align='center' ng-style='navctrl.acceptedCountry'>{{tparCtrl.country}}</h1>
+		<proton-multi-list-picker control='tparCtrl.city' class='beaty' id='border-green'>
+	  		<proton-multi-list-picker-list source='tparCtrl.uploadCities()' static='false' cycle='true'>
+	  		</proton-multi-list-picker-list>
+		</proton-multi-list-picker>
+	
+	<div ng-show='tparCtrl.showOptions' class='flex-container-left' style="width: 200px;">
+		<h1 class='beaty beaty-small'>Stars</h1>
+		<h1 class='beaty beaty-small'>Days</h1>
+		<h1 class = 'beaty beaty-small'>Food</h1>
+	</div>
+	<div ng-show='tparCtrl.showOptions' class='flex-container-left' style="width: 200px;">
+		<proton-multi-list-picker control='tparCtrl.tour_request.stars' class='beaty flex-item' id='border-transparent'>
+	  		<proton-multi-list-picker-list cycle='true'>
+	  			<proton:multi-list-picker-list-item>2</proton:multi-list-picker-list-item>
+	  			<proton:multi-list-picker-list-item>3</proton:multi-list-picker-list-item>
+	  			<proton:multi-list-picker-list-item>4</proton:multi-list-picker-list-item>
+	  			<proton:multi-list-picker-list-item>5</proton:multi-list-picker-list-item>
+	  		</proton-multi-list-picker-list>
+		</proton-multi-list-picker>
+
+		<proton-multi-list-picker control='tparCtrl.tour_request.days' class='beaty flex-item' id='border-transparent'>
+	  		<proton-multi-list-picker-list cycle='true'>
+	  			<proton:multi-list-picker-list-item>5</proton:multi-list-picker-list-item>
+	  			<proton:multi-list-picker-list-item>6</proton:multi-list-picker-list-item>
+	  			<proton:multi-list-picker-list-item>7</proton:multi-list-picker-list-item>
+	  			<proton:multi-list-picker-list-item>8</proton:multi-list-picker-list-item>
+	  			<proton:multi-list-picker-list-item>9</proton:multi-list-picker-list-item>
+	  			<proton:multi-list-picker-list-item>10</proton:multi-list-picker-list-item>
+	  			<proton:multi-list-picker-list-item>11</proton:multi-list-picker-list-item>
+	  			<proton:multi-list-picker-list-item>14</proton:multi-list-picker-list-item>
+	  		</proton-multi-list-picker-list>
+		</proton-multi-list-picker>
+
+		<proton-multi-list-picker control='tparCtrl.tour_request.food_type' class='beaty flex-item' id='border-transparent'>
+	  		<proton-multi-list-picker-list cycle='true'>
+	  			<proton:multi-list-picker-list-item>BB</proton:multi-list-picker-list-item>
+	  			<proton:multi-list-picker-list-item>HB</proton:multi-list-picker-list-item>
+	  			<proton:multi-list-picker-list-item>FB</proton:multi-list-picker-list-item>
+	  			<proton:multi-list-picker-list-item>AI</proton:multi-list-picker-list-item>
+	  		</proton-multi-list-picker-list>
+		</proton-multi-list-picker>
+	</div>
+	<md-button class="md-fab find-tours" aria-label="Profile" style="margin-top:15px;margin-left: 325px; width: 44px; height: 44px;" ng-click="tparCtrl.findTours().then(tparCtrl.gotoToursExp)">
+		<md-icon md-svg-src="../images/find.svg"></md-icon>
+	</md-button>
+	<div ng-show='tparCtrl.showLoading' class="animationload">
+            <div class="osahanloading"></div>
+    </div>
+</modal-dialog>

@@ -1,0 +1,55 @@
+{
+  "name": "angular-map-it",
+  "version": "0.0.1",
+  "description": "Angular module with directives for worldmap with choropleth options, mercator and orthographic projections",
+  "keywords": [
+    "angular",
+    "d3",
+    "maps",
+    "world",
+    "orthographic",
+    "mercator",
+    "choropleth",
+    "azimuthal"
+  ],
+  "authors": [
+    "Siddharth Nandagopal <sid.nandhan@gmail.com>"
+  ],
+  "dependencies": {
+    "d3": "http://d3js.org/d3.v3.min.js"
+  },
+  "devDependencies": {
+    "angular": "~1.4"
+  },
+  "resolutions": {
+    "angular": "1.4.1"
+  },
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "**/bower_components",
+    "test",
+    "tests",
+    "src",
+    "example"
+  ],
+  "main": [
+    "js/angular-map-it.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sidnan/angular-maps.git"
+  },
+  "homepage": "https://github.com/sidnan/angular-maps",
+  "_release": "0.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.0.1",
+    "commit": "0cd3d6e6c0b493e5c5e0db7c4efa43079af7dc64"
+  },
+  "_source": "https://github.com/sidnan/angular-maps.git",
+  "_target": "^0.0.1",
+  "_originalSource": "angular-map-it",
+  "_direct": true
+}

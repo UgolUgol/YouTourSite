@@ -1,0 +1,28 @@
+<modal-dialog show='texpCtrl.modalShown' control='texpCtrl.modalCtrl' width='700px' height='450px' bcolor='rgba(34, 34, 34, 0.9)' type='tour_exp'>
+	<div>
+  	<uib-carousel active="texpCtrl.active" interval="texpCtrl.myInterval" no-wrap="texpCtrl.noWrapSlides">
+  		<md-button id="login-btn" class="md-fab reserve-btn" aria-label="Profile" ng-click='texpCtrl.openLogin()'>
+				<md-icon md-svg-src="../images/plus.svg"></md-icon>
+		</md-button>
+	      <uib-slide ng-repeat="slide in texpCtrl.slides track by slide.id" index="slide.id">
+	 			<img ng-src="{{slide.image}}" ng-click="texpCtrl.currtour(slide)" style="width:100%;max-height: {{slide.height}}px;">
+ 	            <div class="carousel-caption">
+		          <h4 class="beaty beaty-small beaty-solid">{{slide.name}}</h4>
+		          <p>{{slide.cost}} dollars</p>
+		        </div>
+		  </uib-slide>
+	</uib-carousel>
+	</div>
+</modal-dialog>
+
+<modal-dialog show='texpCtrl.showLogin' control="texpCtrl.modalLoginCtrl" width='400px' height='40%' type='country_info'>
+	<div class="col-md-6 col-md-offset-3 input-group" style="margin-top:30px;">
+    	<span id="name_icon" class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    	<input ng-model="texpCtrl.reserveList.name" id="name" type="text" class="form-control" name="Name" placeholder="Name">
+  	</div>
+  	<div class="col-md-6 col-md-offset-3 input-group" style="margin-top:20px;">
+    	<span id="mail_icon" class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+    	<input ng-model="texpCtrl.reserveList.email" id="email" type="text" class="form-control" name="Emal" placeholder="Email">
+  	</div>
+  	<md-button ng-click="texpCtrl.makeReserve().then(texpCtrl.successMessage)" class=" col-md-8 md-raised md-primary" style="margin-top:10px; margin-left:70px;">Reserve</md-button>
+</modal-dialog>

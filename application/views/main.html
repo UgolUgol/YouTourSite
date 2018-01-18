@@ -1,0 +1,12 @@
+<div>
+  	<uib-carousel active="main.active" interval="main.myInterval" no-wrap="main.noWrapSlides">
+	      <uib-slide ng-repeat="slide in main.slides track by slide.id" index="slide.id">
+ 				<img ng-src="{{slide.image}}" style="width:100%; max-height: {{slide.height}}px">
+ 	            <div class="carousel-caption">
+		          <h4>{{slide.Country}}</h4>
+		          <p>{{slide.text}}</p>
+		        </div>
+		  </uib-slide>
+	</uib-carousel>
+</div>
+

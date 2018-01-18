@@ -1,0 +1,41 @@
+<nav class="navbar navbar-default">
+	    <div class="container">
+	      <div class="navbar-header">
+	        <a class="navbar-brand" href="http://localhost:8080/main">
+	        	<img id="brand-image" src="images/bower.svg" >
+	    	</a>
+	    	<a class="navbar-brand" href="http://localhost:8080/main">YourTour Travel</a>
+	      </div>
+	    <div class="navbar-collapse collapse in" collapse="isCollapsed" aria-expanded="true">
+			<div class="col-sm-3 col-md-3">
+			    <form class="navbar-form" role="search">
+			      	<div class="input-group">
+			           	<input type="text" class="form-control" placeholder="Barcelona" name="q">
+			            <div class="input-group-btn">
+			                <button class="btn btn-warning" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+			            </div>
+			        </div>
+			    </form>
+			</div>	
+	        <ul class="nav navbar-nav navbar-right">
+	          	<li><a href="#" ng-click="navctrl.openFind()"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Find</a>
+	          	</li>
+	          	<li><a href="#><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Enter</a>
+	          	</li>
+	          	<li><a href="#"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> About</a>
+	          	</li>
+	        </ul>
+	    </div>
+	</div>
+ </nav>
+
+
+<modal-dialog show='navctrl.modalShown' control='navctrl.modalCtrl' width='700px' height='80%' bcolor='rgba(85, 85, 85, 0.6)'>
+	<div class="flex-class">
+    	<div id="centered" svg-map></div>
+    </div>
+</modal-dialog>
+
+<modal-dialog show='navctrl.modalCountryShown' control='navctrl.modalCountryCtrl' width='700px' height='14%' type='country_info'>
+	<h1 class='beaty' align='center' ng-style='navctrl.acceptedCountry'>{{navctrl.choosenCountry}}</h1>
+</modal-dialog>
