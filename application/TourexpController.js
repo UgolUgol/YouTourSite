@@ -3,8 +3,10 @@ myapp.controller('TourexpCtrl', ['$scope', 'betcosData', 'http_reserve', functio
 	vm.modalShown = true;
 	vm.showLoading = false;
 	vm.showLogin = false;
+	vm.showSMessage = false;
 
 	vm.modalLoginCtrl = {};
+	vm.modalQMCtrl = {};
 	vm.toursList = betcosData.getData();
 	vm.reserveList = {
 		name: '', 
@@ -17,6 +19,7 @@ myapp.controller('TourexpCtrl', ['$scope', 'betcosData', 'http_reserve', functio
 		bad_mail: 2,
 		all_right: 3
 	};
+	vm.resultMessage = '';
 
 	vm.myInterval = -1;
 	vm.noWrapSlides = false;
@@ -53,6 +56,12 @@ myapp.controller('TourexpCtrl', ['$scope', 'betcosData', 'http_reserve', functio
 	vm.openLogin = function(){
 		if(vm.reserveList.tid != 0){
 			vm.showLogin = true;
+
+			// delete animation of error buttons
+			var elname = document.getElementById("name_icon");
+			var elmail = document.getElementById("mail_icon");
+			elname.classList.remove("throw-error-btn");
+			elmail.classList.remove("throw-error-btn");
 		}
 	}
 
@@ -79,9 +88,9 @@ myapp.controller('TourexpCtrl', ['$scope', 'betcosData', 'http_reserve', functio
 		if(vm.RightData() == vm.logException.all_right){
 			return new Promise((resolve) => {
 				http_reserve.sendReserveData(vm.reserveList).then(function(response){
-					resolve();
+					resolve(response);
 				}, function(error){
-					resolve();
+					resolve(error);
 				});
 			})
 		}
@@ -93,8 +102,14 @@ myapp.controller('TourexpCtrl', ['$scope', 'betcosData', 'http_reserve', functio
 		}
 	}
 
-	vm.successMessage = function(){
+	vm.successMessage = function(response){
 		vm.modalLoginCtrl.export_exitanim(400).then(vm.modalLoginCtrl.export_hideModal);
+		vm.showSMessage = true;
+		vm.resultMessage = response.data.message;
+	}
+
+	vm.endReserve = function(){
+		vm.modalQMCtrl.export_exitanim(400).then(vm.modalQMCtrl.export_hideModal);
 	}
 
 

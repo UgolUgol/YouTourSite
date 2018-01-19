@@ -26,3 +26,10 @@
   	</div>
   	<md-button ng-click="texpCtrl.makeReserve().then(texpCtrl.successMessage)" class=" col-md-8 md-raised md-primary" style="margin-top:10px; margin-left:70px;">Reserve</md-button>
 </modal-dialog>
+
+<modal-dialog show='texpCtrl.showSMessage' control="texpCtrl.modalQMCtrl" width="350px" height="30%" type='country_info'>
+	<h4 class="beaty beaty-small beaty-compact">{{texpCtrl.resultMessage}}</h4>
+	<md-button class="md-fab success-btn" aria-label="Profile" ng-click='texpCtrl.endReserve()'>
+		<md-icon md-svg-src="../images/ok.svg"></md-icon>
+	</md-button>
+</modal-dialog>

@@ -32,7 +32,6 @@ const Tours = db.define("TOURS", {}, {freezeTableName: true});
 const Hotels = db.define("HOTELS", {}, {freezeTableName: true});
 const Cities = db.define("CITIES");
 const Countries = db.define("COUNTRIES");
-db.sync();
 
 var router = express.Router();
 

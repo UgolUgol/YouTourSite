@@ -6985,6 +6985,32 @@ button.close {
   }
 }
 
+@keyframes slidein-qm {
+  from {
+    top: 100%;
+    left: 50%;
+  }
+
+  to {
+    top: 50%;
+    left: 50%;
+  }
+}
+
+@keyframes slideout-qm {
+  from {
+    top: 50%;
+    left: 50%;
+    opacity: 1.0;
+  }
+
+  to {
+    top: 0%;
+    left: 50%;
+    opacity: 0.0;
+  }
+}
+
 @-webkit-keyframes blacked-overlay{
   from {
     background-color:transparent;
@@ -7070,6 +7096,12 @@ svg .country:hover , .country.active {
   text-shadow: 1px 1px 2px black;
 }
 
+.beaty-compact{
+  font-size:12px;
+  line-height:2;
+  letter-spacing:5;
+}
+
 @keyframes toaccept {
   from {
       border-bottom: 3px solid #e66c7e;
@@ -7145,6 +7177,23 @@ svg .country:hover , .country.active {
   bottom:0;
   left:0;
 }
+
+.md-button.md-fab.success-btn {
+  background-color:rgb(32, 139, 64);
+  position:absolute;
+  bottom:0;
+  left:0%;
+  
+  top: 95;
+  width: 52px;
+  height: 52px;
+  right: 0px;
+  left: 135;
+}
+.md-button.md-fab.success-btn:hover {
+  background-color:rgb(35, 140, 80);
+}
+
 
 .md-button.md-fab.find-tours{
       background-color: rgb(200, 200, 200);
